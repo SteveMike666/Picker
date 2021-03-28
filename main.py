@@ -10,7 +10,7 @@ def get_news():
     def search():
         kw = e1.get()
         if len(kw.replace(" ", "")) == 0:
-            messagebox.showwarning("新闻 - 警告", "搜索内容不能为空！", parent=win)
+            messagebox.showwarning("news - warning", "搜索内容不能为空！", parent=win)
             return
         x = searchList.get_children()
         for item in x:
@@ -27,11 +27,11 @@ def get_news():
             searchList.insert("", x, values=(name, abstract, link))
 
     win = tk.Tk()
-    win.title("小小新闻")
+    win.title("")
     win.geometry("800x500")
     win.resizable(False, False)
 
-    l1 = tk.Label(win, text="小小新闻", font=(None, 40), fg="red")
+    l1 = tk.Label(win, text="", font=(None, 40), fg="red")
     l1.pack()
 
     tk.Label(win).pack()
@@ -79,7 +79,7 @@ def get_news():
     def copytext(item):
         selection = searchList.item(searchList.focus())["values"]
         if selection == "":
-            messagebox.showwarning("新闻 - 警告", "请选中要复制的那行！", parent=win)
+            messagebox.showwarning("news - warning", "请选中要复制的那行！", parent=win)
             return
         win.clipboard_append(selection[item])
 
@@ -95,7 +95,7 @@ def get_news():
     def openurl():
         selection = searchList.item(searchList.focus())["values"]
         if selection == "":
-            messagebox.showwarning("新闻 - 警告", "请选中要打开链接的那行！", parent=win)
+            messagebox.showwarning("news - warning", "请选中要打开链接的那行！", parent=win)
             return
         webbrowser.open(selection[2])
 
