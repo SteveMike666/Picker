@@ -1,2 +1,2 @@
-# News-Picker
-News-Picker
+# Picker
+Picker
